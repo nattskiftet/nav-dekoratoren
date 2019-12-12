@@ -11,6 +11,7 @@
 # production
 /build
 /buildfolder
+/npmpackage
 
 # testing
 /coverage

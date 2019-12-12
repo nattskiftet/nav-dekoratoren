@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "target": "es6",
+        "lib": ["dom", "dom.iterable", "esnext"],
+        "outDir": "./npmpackage",
+        "emitDeclarationOnly": true,
+        "declaration": true,
+        "strict": true,
+        "jsx": "react",
+        "moduleResolution": "node",
+        "allowSyntheticDefaultImports": true,
+        "resolveJsonModule": true,
+        "skipLibCheck": true
+    },
+    "include": ["src/npm-package/*"],
+    "exclude": ["node_modules"]
+}

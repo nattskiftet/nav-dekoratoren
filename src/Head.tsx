@@ -9,6 +9,10 @@ if (verifyWindowObj()) {
     es6promise.polyfill();
 }
 
+interface Props {
+    miljo?: string;
+}
+
 function echoDevMode() {
     console.log('==========================');
     console.log('======= DEVELOPMENT ======');
@@ -29,11 +33,13 @@ if (verifyWindowObj()) {
     }
 }
 
-function Head() {
+const Head = (props: Props) => {
+    console.log(props.miljo);
     return (
         <LanguageProvider>
             <Header />
         </LanguageProvider>
     );
-}
+};
+
 export default Head;
