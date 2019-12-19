@@ -51,17 +51,9 @@ app.use(function(req, res, next) {
 
 const store = getStore();
 
-const test = (test: string) => {
-    return (
-        <ReduxProvider store={store}>
-            <Head miljo={test} />
-        </ReduxProvider>
-    );
-};
-
 const header = ReactDOMServer.renderToString(
     <ReduxProvider store={store}>
-        <Head miljo={} />
+        <Head />
     </ReduxProvider>
 );
 const footer = ReactDOMServer.renderToString(
