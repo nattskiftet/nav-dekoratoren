@@ -9,9 +9,9 @@ const autoprefixer = require('autoprefixer');
 const browserConfig = {
     mode: process.env.NODE_ENV ? process.env.NODE_ENV : 'development',
     target: 'web',
-    entry: { index: './src/npm-package/index.ts' },
+    entry: { decorator: './src/npm-package/index.tsx' },
     output: {
-        path: path.resolve(__dirname, 'npmpackage/'),
+        path: path.resolve(__dirname, 'packagebuild/'),
         filename: '[name].js',
         publicPath: '/person/nav-dekoratoren/',
         libraryTarget: 'commonjs2',
