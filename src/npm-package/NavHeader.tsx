@@ -5,7 +5,7 @@ import Head from '../Head';
 
 const store = getStore();
 
-const NavHeader = () => {
+const NavHeader: React.FunctionComponent<{}> = () => {
     return (
         <ReduxProvider store={store}>
             <Head />

@@ -25,14 +25,16 @@ if (
 
 function App() {
     return (
-        <ReduxProvider store={store}>
-            <LanguageProvider>
-                <>
-                    <Header />
-                    <Footer />
-                </>
-            </LanguageProvider>
-        </ReduxProvider>
+        <>
+            <ReduxProvider store={store}>
+                <LanguageProvider>
+                    <>
+                        <Header />
+                        <Footer />
+                    </>
+                </LanguageProvider>
+            </ReduxProvider>
+        </>
     );
 }
 export default App;

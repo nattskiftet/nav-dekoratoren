@@ -6,12 +6,26 @@ const resolve = require('resolve');
 const prefixer = require('postcss-prefix-selector');
 const autoprefixer = require('autoprefixer');
 
-const browserConfig = {
+const buildpackageConfig = {
+    externals: {
+        react: {
+            commonjs: 'react',
+            commonjs2: 'react',
+            amd: 'React',
+            root: 'React',
+        },
+        'react-dom': {
+            commonjs: 'react-dom',
+            commonjs2: 'react-dom',
+            amd: 'ReactDOM',
+            root: 'ReactDOM',
+        },
+    },
     mode: process.env.NODE_ENV ? process.env.NODE_ENV : 'development',
     target: 'web',
-    entry: { index: './src/npm-package/index.ts' },
+    entry: { decorator: './src/npm-package/index.tsx' },
     output: {
-        path: path.resolve(__dirname, 'npmpackage/'),
+        path: path.resolve(__dirname, 'packagebuild/'),
         filename: '[name].js',
         publicPath: '/person/nav-dekoratoren/',
         libraryTarget: 'commonjs2',
@@ -156,4 +170,4 @@ const browserConfig = {
     ],
 };
 
-module.exports = browserConfig;
+module.exports = buildpackageConfig;

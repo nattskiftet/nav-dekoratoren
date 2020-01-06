@@ -10,6 +10,11 @@ import { verifyWindowObj } from './utils/environments';
 import Head from './Head';
 import Footer from './komponenter/footer/Footer';
 import './index.less';
+import * as es6promise from 'es6-promise';
+
+if (verifyWindowObj()) {
+    es6promise.polyfill();
+}
 
 const tagManagerArgs = {
     gtmId: 'GTM-PM9RP3',

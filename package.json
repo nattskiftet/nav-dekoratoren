@@ -1,12 +1,13 @@
 {
     "name": "@navikt/nav-dekoratoren",
     "author": "NAVIKT",
-    "version": "0.3.2",
+    "version": "0.3.8",
     "description": "hode og fot navigasjon for nav.no",
-    "homepage": "/person/nav-dekoratoren",
+    "homepage": "nav.no/person/nav-dekoratoren",
     "private": false,
-    "main": "npmpackage/index.js",
-    "types": "npmpackage/head.d.ts",
+    "main": "packagebuild/decorator.js",
+    "module": "packagebuild/decorator.js",
+    "types": "packagebuild/npm-package/index.d.ts",
     "scripts": {
         "start-craco": "craco start",
         "start": "cross-env DEVELOPMENT=true npm-run-all -p -r start-craco server",
@@ -21,7 +22,7 @@
         "build-server": "cross-env NODE_ENV=production webpack -p --display-error-details --config webpack.server.config.js",
         "build-client-dev": "cross-env NODE_ENV=development webpack --display-error-details --config webpack.client.config.js ",
         "build-server-dev": "cross-env NODE_ENV=development webpack --display-error-details --config webpack.server.config.js",
-        "build-npm": "npm run build-npm-file && npm run build-npm-d",
+        "buildpackage": "npm run build-npm-file && npm run build-npm-d",
         "build-npm-file": "cross-env NODE_ENV=development webpack --display-error-details --config webpack.npm.build.config.js",
         "build-npm-d": "tsc --project tsconfig.typegen.json",
         "server": "nodemon src/server/server.js",
@@ -41,8 +42,12 @@
         "url": "https://github.com/navikt/nav-dekoratoren/issues"
     },
     "files": [
-        "npmpackage"
+        "packagebuild"
     ],
+    "peerDependencies": {
+        "react": ">=15.0.1",
+        "react-dom": ">=15.0.1"
+    },
     "dependencies": {
         "@babel/polyfill": "^7.6.0",
         "@craco/craco": "^5.5.0",
