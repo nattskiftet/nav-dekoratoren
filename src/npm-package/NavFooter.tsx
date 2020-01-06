@@ -5,7 +5,7 @@ import Footer from '../komponenter/footer/Footer';
 
 const store = getStore();
 
-const NavFooter = () => {
+const NavFooter = (): React.ReactElement => {
     return (
         <ReduxProvider store={store}>
             <Footer />
